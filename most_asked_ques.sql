@@ -13,5 +13,12 @@ e.salary as Salary
 from Employee e
 join Department d
 on e.departmentId=d.id
-where e.salary=(select max(salary)from Employee 
+where e.salary=
+  (select max(salary)from Employee 
   where departmentId=e.departmentId);
+
+-- Duplicate Email
+ select p.email as Email 
+from Person p
+group by email
+having count(p.email)>1;
