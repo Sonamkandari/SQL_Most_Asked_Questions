@@ -1,4 +1,4 @@
--- second highest salary
+men-- second highest salary
 select max(salary) from Employee 
 where salary<(select max(salary)from employee);
 
@@ -6,4 +6,12 @@ where salary<(select max(salary)from employee);
 select (select distinct salary from employee 
 order by salary desc limit 1 offset 1) as SecondHigestSalary;
 
--- 
+-- Departmet Highest Salary
+select d.name as Department,
+e.name as Employee,
+e.salary as Salary
+from Employee e
+join Department d
+on e.departmentId=d.id
+where e.salary=(select max(salary)from Employee 
+  where departmentId=e.departmentId);
