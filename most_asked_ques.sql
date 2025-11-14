@@ -41,5 +41,12 @@ select customer_number from Orders
 group by customer_number
 order by count(distinct order_number) desc limit 1
 
+-- classes with at Leat 5 Students
+select class from Courses 
+group by class
+having count(Student)>=5;
+
+-- 
+
 
 
