@@ -1,4 +1,4 @@
-men-- second highest salary
+-- second highest salary
 select max(salary) from Employee 
 where salary<(select max(salary)from employee);
 
@@ -46,7 +46,8 @@ select class from Courses
 group by class
 having count(Student)>=5;
 
--- 
+-- Monthly Transactions I
+
 
 
 
