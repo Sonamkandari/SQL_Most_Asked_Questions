@@ -22,3 +22,16 @@ where e.salary=
 from Person p
 group by email
 having count(p.email)>1;
+
+-- Employee Earning more than their Managers 
+select e1.name as Employee from Employee e1
+join Employee m2
+on e1.managerId=m2.id
+where e1.salary>m2.salary
+-- Not Boring Movies
+select id, movie, description, rating 
+from Cinema 
+where id%!=0 And description!='boring' order 
+by rating desc;
+
+-- Find Customer Referee
